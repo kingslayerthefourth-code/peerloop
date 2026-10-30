@@ -16,7 +16,12 @@ export default defineConfig({
       display: 'standalone',
       icons: [{ src: 'icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }],
     },
-    workbox: { globPatterns: ['**/*.{js,css,html,svg,webmanifest}'], navigateFallback: 'index.html' },
+    workbox: {
+      globPatterns: ['**/*.{js,css,html,svg,webmanifest}'],
+      navigateFallback: 'index.html',
+      // The standalone demo player is a real document, not an app route.
+      navigateFallbackDenylist: [/\/demo(?:\/|$)/],
+    },
   })],
   test: { include: ['src/**/*.test.{ts,tsx}'] },
 });

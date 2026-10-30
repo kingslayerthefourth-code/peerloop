@@ -66,6 +66,8 @@ Reports are in [evidence/](evidence/). These automated checks and selected keybo
 
 The video is H.264, 1920×1080, 24 fps, exactly 110 seconds and 2,640 decoded frames. Full decode exited 0; representative encoded frames were inspected. It has burned English captions and downloadable SRT/WebVTT captions. It is an edited guided demo assembled from actual captured screens, with readable still holds and crops, rather than continuous real-time footage. All demonstration data is fictional. See [media verification](evidence/video.json) and [recording notes](../submission/DEMO_SCRIPT.md).
 
+The standalone demo route is excluded from the application navigation fallback; a controlling service worker was updated locally and the /demo/ page loaded the real player with duration 110 seconds and playback advancing.
+
 The first published application commit was 83f352e7a349ffb7525235f1b8c8c2d41ac80201. The completed release adds persistence fixes, adjacent-window handling, extra tests, media and documentation. The exact completed release SHA and CI result are recorded in the local release handoff after publication.
 
 ## Remaining entrant actions and limits

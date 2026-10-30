@@ -33,8 +33,8 @@ Not done: application implementation, executable tests, install/build, deploymen
 | Date | Work | Evidence |
 | --- | --- | --- |
 | 2026-10-25 | Pre-event research, specification, sketches, submission planning | Files under planning/ and submission/ |
-| Pending | First application source | Record actual timestamp and commit when created |
-| Pending | Verified release | Record source commit, checks, repository, Pages URL, video path |
+| 2026-10-30 | First application source | 08:17:40 UTC; initial public application commit 83f352e |
+| 2026-10-30 | Verified application and media | 26 tests; public Pages; 110-second MP4; see release handoff |
 
 ## Scheduled continuation
 
@@ -70,3 +70,5 @@ Final source fixes include contiguous-availability handling, preserving stored w
 The public application and repository were verified through a separate signed-out browser. The 110-second captioned actual-capture demo passed a full 2,640-frame decode and representative-frame review. A small final MP4, subtitles, hosted player and actual screenshots are included with the release. Final URLs and the source/CI receipt are in submission/HANDOFF.md and local release-artifacts/RELEASE.json after publication.
 
 The entrant still handles review, personal-learning wording, required consent, award opt-in and final Devpost submission. No event registration, terms acceptance or submission was performed. All new spending remains $0. The scheduled build should stop once the completed release and handoff are verified; do not keep rerunning while waiting for the entrant's reserved actions.
+
+Release verification caught a PWA navigation fallback intercepting the standalone demo URL. The demo path is now excluded; a local browser with an active service worker loaded the correct player, reported 110 seconds, and advanced playback. Final published playback and CI receipts are retained in release-artifacts/RELEASE.json.

@@ -18,7 +18,7 @@
 - [x] 110-second captioned MP4 and matching SRT/WebVTT created; full decode and representative frames verified.
 - [x] Final project text, credits, AI disclosure, judge guide and review handoff prepared.
 - [x] Source/data review: no credentials, real student records, external runtime AI or purchased assets introduced.
-- [ ] Final completed release CI and hosted video playback receipt recorded in local RELEASE.json after publication.
+- [x] Release CI, hosted playback, source revision and limitations are recorded in the final local RELEASE.json handoff.
 
 Native Chrome file importing remains unverified because automated local file access is disabled. Actual import handlers and complete validation, failure preservation and confirmation are covered by the DOM integration tests. See [verification](../planning/VERIFICATION.md).
 
