@@ -1,27 +1,41 @@
-# Demo storyboard — 110 seconds
+# PeerLoop demo — completed video
 
-Prepared October 25, 2026. This is a recording plan, not an existing video. Capture the working application during the event. Use English on-screen captions; no voice, face, paid narration, licensed music, or live student participation is required.
+The final local video is **110 seconds** at 1920 × 1080, H.264 MP4, with readable English captions burned into the picture. A matching UTF-8 SRT is provided. It has no narration, music, face, or live student participation.
 
-| Time | Actual screen action to record | Caption |
+- Video: `release-artifacts/video/peerloop-demo.mp4`
+- Subtitles: `release-artifacts/video/peerloop-demo.srt`
+- Production source and timeline: `release-artifacts/video/build_demo.py` and `timeline.json`
+- Capture provenance: `release-artifacts/recording/README.md`
+- Hosted player: https://kingslayerthefourth-code.github.io/peerloop/demo/
+- Hosted MP4: https://kingslayerthefourth-code.github.io/peerloop/demo/peerloop-demo.mp4
+
+This is an **edited screen-capture walkthrough**, assembled from actual working-application screencast frames and screenshots captured on October 30, 2026. Readable holds, crops, and caption bars are editing choices; it is not continuous real-time footage or a performance benchmark. Its persistent label says “Edited screen captures · fictional data · pauses trimmed.” No application results or student outcomes were fabricated for the video.
+
+## Final timeline
+
+| Time | Actual application material | Caption purpose |
 | --- | --- | --- |
-| 0–10 s | Product title and empty club | Your club already has skills. Connecting the right people is the hard part. |
-| 10–23 s | Click Try fictional example; show the visible example label | Fictional example: three students, three different needs. |
-| 23–37 s | Inspect each profile's offer and request | Noor offers Python. Sami offers mathematics. Lina offers design. Each needs a different skill. |
-| 37–52 s | Show the selected meeting and shared availability | PeerLoop checks both the skill and a time everyone can attend. |
-| 52–72 s | Generate the plan; show the actual arrows and timeline | One three-person exchange connects all three requests. Every teaching step is explained. |
-| 72–84 s | Change one member's availability to a conflicting range; regenerate | When times do not work, PeerLoop keeps the unresolved request visible. |
-| 84–94 s | Restore the example; switch to Arabic | English and Arabic. One organizer's browser. No student accounts. |
-| 94–103 s | Switch back; print preview and JSON export | Confirm the suggestions with your group, then print a plan or save your club file. |
-| 103–110 s | Product end card with actual repository/demo URLs | Built with Codex assistance. Fictional data; real working prototype. |
+| 0–7 s | Empty club | Introduce free peer support. |
+| 7–17 s | Fictional example loaded | Identify the demonstration as fictional. |
+| 17–28 s | Noor, Sami, and Lina’s profiles | Explain their offers and requests. |
+| 28–35 s | Meeting-date control | Explain the availability constraint. |
+| 35–43 s | Generated 3/3 plan | Show the three-person result. |
+| 43–57 s | Actual loop diagram and timeline | Explain all three teaching turns. |
+| 57–65 s | Actual member-edit form with Noor at 18:00–19:00 | Show the time conflict entered into the form. |
+| 65–77 s | Actual 1/3 result after a time conflict | Show the remaining requests and explanations. |
+| 77–81 s | Replacement confirmation | Show that replacing the club requires consent. |
+| 81–91 s | Actual Arabic plan | Show right-to-left presentation. |
+| 91–100 s | Actual expanded club-file panel | Explain JSON portability and organizer confirmation. |
+| 100–110 s | Original end card with verified project links | Provide demo/source URLs and Codex-assistance credit. |
 
-Record only delivered features. Adapt the storyboard if a feature is removed, rather than staging behavior that does not exist. Keep the example label readable, and show real clicks and results. Do not portray fast-forwarded processing as a measured performance result.
+The video describes printing as an application feature; it does not stage a print-preview capture. The form scene uses an actual additional capture showing the conflicting 18:00–19:00 availability.
 
-## Production requirements
+## Entrant upload step
 
-- Final length: 90–120 seconds, aiming for 110 seconds.
-- Capture at a readable desktop viewport; retain a separate mobile screenshot.
-- Generate a matching UTF-8 subtitle file and burn captions into the final MP4 for accessibility without requiring a particular player.
-- Keep raw captures, final video, and subtitle files under a release-artifacts directory created during the event. Do not commit large raw videos to GitHub.
-- Use an available free encoder and permitted browser capture capability. Recheck tooling and permissions during the build; do not claim recording succeeded until the resulting file plays correctly.
-- Open the final MP4, verify duration and caption timing, and inspect representative frames before delivery.
-- Upload using an account connected by the entrant if available and authorized. Otherwise deliver the finished local video and a single exact upload step; do not fabricate a hosted URL.
+The completed video is hosted with the application on free GitHub Pages. Add the player URL as an additional project/demo link. The event accepts websites and other demo evidence and makes a 1–2 minute video optional. If the optional Devpost embedded-video field only accepts YouTube/Vimeo and you want that embed, upload `release-artifacts/video/peerloop-demo.mp4` to your own channel as **Unlisted**, then paste the actual supported watch URL. If YouTube asks you to make audience, rights, or consent declarations, complete those yourself accurately. Open the resulting link in a signed-out browser before submission. Keep the video available through judging.
+
+The October 25 storyboard was pre-event preparation. The screen captures, video, subtitles, and final editing were created during the event on October 30; see the development disclosure.
+
+## Verification
+
+The final MP4 decoded in full with FFmpeg (exit 0), producing 2,640 frames at 24 fps over exactly 110.00 seconds. Representative frames were extracted at eight points across the video; captions and the loop, conflicting-time form, Arabic plan, and end card were inspected. The video is 1,645,367 bytes. Retained evidence is in `release-artifacts/video/VERIFICATION.json` and `decode-verification.log`.

@@ -1,0 +1,30 @@
+{
+  "file": "release-artifacts/video/peerloop-demo.mp4",
+  "duration_seconds": 110,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "codec": "H.264 (High)",
+  "pixel_format": "yuv420p",
+  "frames_per_second": 24,
+  "decoded_frames": 2640,
+  "full_decode_exit_code": 0,
+  "size_bytes": 1645367,
+  "sha256": "175f2b49a41b2c4cb1d8fc326486caac32753d149dbe889b6a95f19d2462e0d3",
+  "subtitle_cues": 12,
+  "subtitle_end": "00:01:50,000",
+  "audio": "none",
+  "representative_frame_seconds": [
+    3,
+    23,
+    50,
+    61,
+    70,
+    86,
+    95,
+    105
+  ],
+  "screen_source": "actual app screenshots and CDP screencast frames",
+  "editing": "readable still holds, crops, caption bars, original end card; not continuous realtime footage"
+}

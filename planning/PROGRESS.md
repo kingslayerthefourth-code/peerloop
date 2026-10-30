@@ -1,6 +1,6 @@
 # Progress and continuation
 
-## Current state — October 25, 2026
+## Preparation history — October 25, 2026
 
 The user approved the PeerLoop plan and requested implementation. The event has not opened. Preparation is complete in local files; substantive application work is intentionally deferred until October 30, 2026, noon Asia/Dubai.
 
@@ -60,3 +60,13 @@ The event rules were rechecked after the approved noon Dubai start. First applic
 TypeScript compilation, twenty unit tests, and the production/PWA build passed. The first dense 30-member/eight-window fixture measured 222.30 ms. Browser checks verified the fictional three-person loop, duplicate-alias handling, member creation/removal, edited time conflicts, Arabic layout and retained suggestions, Escape/focus restoration, and no horizontal overflow at 390px and 320px. Accessibility review found contrast and heading-order issues; fixes are being verified.
 
 The public repository https://github.com/kingslayerthefourth-code/peerloop was created with its initial README. Source publication, Pages deployment, remaining browser checks, and the final demo recording are still in progress. No event registration, award opt-in, or submission occurred.
+
+## Release package — October 30, 2026
+
+The application is implemented. Strict TypeScript, 26 automated tests and the final production/PWA build passed. A fresh final roster scan passed 38 axe rules with zero violations; selected English/Arabic plan and form scans also reported zero violations. Final mobile-plan widths were 390/390 and 320/320 with no horizontal overflow. Printing was inspected using browser print media. Native Chrome file chooser automation remains unverified with local file permission disabled; real React-handler import tests cover both invalid-file preservation and confirmed replacement.
+
+Final source fixes include contiguous-availability handling, preserving stored work after failed reads, accurate queued-save status, form-data submission and contrast/heading repairs. The final dense 30-member/eight-window test took 446.54 ms. No real users or personal-learning outcomes are claimed.
+
+The public application and repository were verified through a separate signed-out browser. The 110-second captioned actual-capture demo passed a full 2,640-frame decode and representative-frame review. A small final MP4, subtitles, hosted player and actual screenshots are included with the release. Final URLs and the source/CI receipt are in submission/HANDOFF.md and local release-artifacts/RELEASE.json after publication.
+
+The entrant still handles review, personal-learning wording, required consent, award opt-in and final Devpost submission. No event registration, terms acceptance or submission was performed. All new spending remains $0. The scheduled build should stop once the completed release and handoff are verified; do not keep rerunning while waiting for the entrant's reserved actions.

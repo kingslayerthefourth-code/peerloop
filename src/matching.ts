@@ -10,7 +10,15 @@ const teaches = (a: Profile, b: Profile) => a.id !== b.id && a.offers.includes(b
 function commonStart(members: Profile[], weekday: number, duration: number): number | undefined {
   let windows: [number, number][] = [[0, 1440]];
   for (const person of members) {
-    const own = person.availability.filter(a => a.weekday === weekday).map(a => [minutes(a.start), minutes(a.end)]);
+    const own: [number, number][] = [];
+    const ranges = person.availability.filter(a => a.weekday === weekday)
+      .map(a => [minutes(a.start), minutes(a.end)] as [number, number]).sort((a, b) => a[0] - b[0]);
+    // Adjacent windows describe uninterrupted availability, even across a file boundary.
+    for (const range of ranges) {
+      const previous = own[own.length - 1];
+      if (previous && range[0] <= previous[1]) previous[1] = Math.max(previous[1], range[1]);
+      else own.push([...range]);
+    }
     windows = windows.flatMap(([s, e]) => own.map(([os, oe]): [number, number] => [Math.max(s, os), Math.min(e, oe)]).filter(([s, e]) => e - s >= duration));
     if (!windows.length) return undefined;
   }

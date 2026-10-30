@@ -1,0 +1,49 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.000
+Your club already has skills.
+PeerLoop helps turn them into free peer support.
+
+00:00:07.000 --> 00:00:17.000
+Start with a clearly labelled fictional example.
+Three members. Three different needs.
+
+00:00:17.000 --> 00:00:28.000
+Noor offers Python. Sami offers mathematics. Lina offers design.
+Each member asks for a different skill.
+
+00:00:28.000 --> 00:00:35.000
+Choose the meeting date.
+Suggestions must fit the members’ shared availability.
+
+00:00:35.000 --> 00:00:43.000
+The generated plan connects all three requests
+in one 45-minute exchange.
+
+00:00:43.000 --> 00:00:57.000
+Lina helps Sami with design. Sami helps Noor with mathematics.
+Noor helps Lina with Python. Every turn is explained.
+
+00:00:57.000 --> 00:01:05.000
+Move Noor’s available time to 18:00–19:00.
+Sami and Lina are still available at 16:00–17:00.
+
+00:01:05.000 --> 00:01:17.000
+After Noor’s time is changed, only one request can be fulfilled.
+PeerLoop explains the remaining requests instead of hiding them.
+
+00:01:17.000 --> 00:01:21.000
+Replacing the club with the example
+requires confirmation.
+
+00:01:21.000 --> 00:01:31.000
+Switch between English and Arabic.
+The Arabic interface uses a right-to-left layout.
+
+00:01:31.000 --> 00:01:40.000
+Save a portable JSON club file, or print a session plan.
+Confirm the suggested sessions with your group first.
+
+00:01:40.000 --> 00:01:50.000
+A working prototype for small clubs.
+Fictional examples; no measured student outcomes.

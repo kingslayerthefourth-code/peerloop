@@ -4,6 +4,8 @@
 
 PeerLoop helps a school-club organizer arrange free peer tutoring, reciprocal exchanges, and three-person skill loops. It checks subjects and shared availability, explains its suggestions, and leaves unresolved requests visible.
 
+[Open PeerLoop](https://kingslayerthefourth-code.github.io/peerloop/) · [Watch the 110-second demo](https://kingslayerthefourth-code.github.io/peerloop/demo/) · [Submission handoff](submission/HANDOFF.md)
+
 ## Try it locally
 
 Use Node.js 22 or later and pnpm 11.25.0.
@@ -48,6 +50,6 @@ See [verification evidence](planning/VERIFICATION.md), [progress](planning/PROGR
 
 ## Design and credits
 
-React, TypeScript, Vite, vite-plugin-pwa/Workbox, IndexedDB, Vitest, and axe-core. Original interface SVGs and system fonts. See the dependency lockfile for exact versions and upstream licenses. Source is MIT licensed.
+React, TypeScript, Vite, vite-plugin-pwa/Workbox, IndexedDB, Vitest, and axe-core. Original interface SVGs and system fonts. See [third-party credits](THIRD_PARTY.md) and the dependency lockfile for resolved versions and upstream licenses. Source is MIT licensed.
 
 The pre-event [specification](planning/BUILD_SPEC.md), [sketches](planning/WIREFRAMES.md), and [event notes](planning/EVENT.md) explain the design decisions. The [demo storyboard](submission/DEMO_SCRIPT.md) and [judge guide](submission/JUDGE_GUIDE.md) support the final handoff.

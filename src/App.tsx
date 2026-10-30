@@ -70,6 +70,7 @@ export default function App() {
   const [club, setClub] = useState<Club>(emptyClub);
   const [lang, setLang] = useState<Language>('en');
   const [example, setExample] = useState(false), [ready, setReady] = useState(false), [temporary, setTemporary] = useState(false), [saving, setSaving] = useState(false);
+  const [canSave, setCanSave] = useState(false);
   const [date, setDate] = useState(today()), [zone, setZone] = useState('Asia/Dubai');
   const [plan, setPlan] = useState<Plan | null>(null);
   const [view, setView] = useState(location.hash.slice(1) || 'members');
@@ -78,17 +79,30 @@ export default function App() {
   const [status, setStatus] = useState(''), [error, setError] = useState('');
   const file = useRef<HTMLInputElement>(null), writes = useRef(Promise.resolve());
   const t = strings(lang), names = subjectNames[lang];
-  useEffect(() => { load().then(s => { setClub(s.club); setZone(s.club.timeZone); setDate(today(s.club.timeZone)); setLang(s.lang); setExample(s.example); }).catch(() => setTemporary(true)).finally(() => setReady(true)); }, []);
   useEffect(() => {
-    if (!ready) return;
+    let active = true;
+    load().then(s => {
+      if (!active) return;
+      setClub(s.club); setZone(s.club.timeZone); setDate(today(s.club.timeZone)); setLang(s.lang); setExample(s.example); setCanSave(true);
+    }).catch(() => { if (active) setTemporary(true); }).finally(() => { if (active) setReady(true); });
+    return () => { active = false; };
+  }, []);
+  useEffect(() => {
+    // A failed read must never replace stored work with the initial empty club.
+    if (!ready || !canSave) return;
+    let latest = true;
     setSaving(true);
-    writes.current = writes.current.then(() => save({ club, lang, example })).then(() => setTemporary(false)).catch(() => setTemporary(true)).finally(() => setSaving(false));
-  }, [club, lang, example, ready]);
+    writes.current = writes.current.then(() => save({ club, lang, example }))
+      .then(() => { if (latest) setTemporary(false); })
+      .catch(() => { if (latest) setTemporary(true); })
+      .finally(() => { if (latest) setSaving(false); });
+    return () => { latest = false; };
+  }, [club, lang, example, ready, canSave]);
   useEffect(() => { document.documentElement.lang = lang; document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'; }, [lang]);
   useEffect(() => { window.scrollTo({ top: 0 }); document.getElementById('main')?.focus({ preventScroll: true }); }, [view]);
   useEffect(() => { const change = () => setView(location.hash.slice(1) || 'members'); window.addEventListener('hashchange', change); return () => window.removeEventListener('hashchange', change); }, []);
   function go(next: string) { location.hash = next; setView(next); }
-  function change(next: Club, nextExample = example) { setClub(next); setExample(nextExample); setPlan(null); setError(''); }
+  function change(next: Club, nextExample = example) { setClub(next); setExample(nextExample); setCanSave(true); setPlan(null); setError(''); }
   function ask(text: string, action: () => void) { setConfirmation({ text, action }); }
   function sample() {
     const action = () => { const d = today(club.timeZone); setDate(d); change({ ...demoClub(d), timeZone: club.timeZone }, true); go('members'); setStatus(t.example); };

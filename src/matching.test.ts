@@ -53,6 +53,16 @@ describe('meaningful peer exchanges', () => {
     expect(p.sessions.flatMap(s => s.edges).every(e => e.from !== e.to)).toBe(true);
     expect(generatePlan(club(make('self', ['python'], 'python')), date).sessions).toEqual([]);
   });
+  it('joins adjacent windows but preserves even a one-minute gap', () => {
+    const c = demoClub(date);
+    c.profiles[0].availability = [
+      { weekday: 5, start: '16:15', end: '17:00' },
+      { weekday: 5, start: '16:00', end: '16:15' },
+    ];
+    expect(generatePlan(c, date).sessions[0]).toMatchObject({ kind: 'loop', start: 960, end: 1005 });
+    c.profiles[0].availability[0].start = '16:16';
+    expect(generatePlan(c, date).sessions.some(s => s.kind === 'loop')).toBe(false);
+  });
   it('is independent of input ordering', () => {
     const c = demoClub(date);
     expect(generatePlan(c, date)).toEqual(generatePlan({ ...c, profiles: [...c.profiles].reverse() }, date));

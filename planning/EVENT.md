@@ -36,3 +36,7 @@ Permitted preparation here: requirements, research, interface sketches, an imple
 ## Scope of this handoff
 
 The user asked Codex to prepare the entry and reserved account connection, review, required consent, and final submission for themselves. Do not join an event, accept award terms, submit the project, or invent evidence on the entrant's behalf as part of a background build.
+
+## October 30 release recheck
+
+Overview and rules were rechecked during the build and again at release. The header still says November 30 midnight Pacific while the rules say November 30 noon Pacific; retain the earlier Dubai cutoff. The overview accepts a website, demo, source or screenshots as evidence and describes a 1–2 minute video as optional but encouraged. PeerLoop provides those links and a 110-second hosted demo; a YouTube/Vimeo embed is not claimed. Award opt-in and disclosure/understanding requirements remain.
